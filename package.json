@@ -1,8 +1,8 @@
 {
-  "name": "spring-doc-resources",
-  "description": "Spring Documentation Resources",
+  "name": "ossez-doc-resources",
+  "description": "Ossez Documentation Resources",
   "version": "0.1.1",
-  "repository": "https://github.com/spring-io/spring-doc-resources",
+  "repository": "https://github.com/ossez-com/ossez-doc-resources",
   "license": "Apache-2.0",
   "devDependencies": {
     "@asciidoctor/gulp-asciidoctor": "^2.2.5",
