@@ -4,8 +4,8 @@ plugins {
 	id 'com.github.node-gradle.node' version '2.2.4'
 }
 
-group = 'io.spring.docresources'
-description = 'Spring Documentation Resources'
+group = 'com.ossez.docresources'
+description = 'Ossez Documentation Resources'
 
 node {
 	version = '15.0.1'
@@ -17,7 +17,7 @@ distZip.dependsOn npm_run_build
 
 distributions {
 	main {
-		distributionBaseName = 'spring-doc-resources'
+		distributionBaseName = 'ossez-doc-resources'
 		contents {
 			from { "${buildDir}/dist" }
 			into '/'
