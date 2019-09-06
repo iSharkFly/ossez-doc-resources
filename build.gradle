@@ -5,8 +5,8 @@ plugins {
 	id "com.moowork.gulp" version '1.2.0'
 }
 
-group = 'io.spring.docresources'
-description = 'Spring Documentation Resources'
+group = 'com.ossez.docresources'
+description = 'Ossez Documentation Resources'
 
 node {
 	version = '11.2.0'
@@ -16,7 +16,7 @@ node {
 
 distributions {
 	main {
-		baseName = 'spring-doc-resources'
+		baseName = 'ossez-doc-resources'
 		contents {
 			from { "${buildDir}/dist" }
 			into '/'
@@ -28,6 +28,16 @@ publishing {
 	publications {
 		maven(MavenPublication) {
 			artifact distZip
+		}
+	}
+
+	repositories {
+		maven {
+			url "https://maven.ossez.com/repository/internal/"
+			credentials {
+				username ""
+				password ""
+			}
 		}
 	}
 }
