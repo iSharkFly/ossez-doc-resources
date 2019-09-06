@@ -1,8 +1,7 @@
 plugins {
 	id 'distribution'
 	id 'maven-publish'
-	id 'com.moowork.node' version '1.2.0'
-	id "com.moowork.gulp" version '1.2.0'
+	id 'com.github.node-gradle.node' version '2.2.4'
 }
 
 group = 'com.ossez.docresources'
@@ -18,7 +17,7 @@ distZip.dependsOn npm_run_build
 
 distributions {
 	main {
-		distributionBaseName = 'ossez-doc-resources'
+		baseName = 'ossez-doc-resources'
 		contents {
 			from { "${buildDir}/dist" }
 			into '/'
