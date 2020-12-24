@@ -31,4 +31,14 @@ publishing {
 			artifact distZip
 		}
 	}
+
+	repositories {
+		maven {
+			url "https://maven.ossez.com/repository/internal/"
+			credentials {
+				username ""
+				password ""
+			}
+		}
+	}
 }
