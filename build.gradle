@@ -1,15 +1,14 @@
 plugins {
 	id 'distribution'
 	id 'maven-publish'
-	id 'com.moowork.node' version '1.2.0'
-	id "com.moowork.gulp" version '1.2.0'
+	id 'com.github.node-gradle.node' version '2.2.4'
 }
 
 group = 'com.ossez.docresources'
-description = 'Ossez Documentation Resources'
+description = 'Ossez 文档资源库'
 
 node {
-	version = '15.0.1'
+	version = '14.15.3'
 	download = true
 }
 
@@ -18,7 +17,7 @@ distZip.dependsOn npm_run_build
 
 distributions {
 	main {
-		distributionBaseName = 'ossez-doc-resources'
+		baseName = 'ossez-doc-resources'
 		contents {
 			from { "${buildDir}/dist" }
 			into '/'
@@ -30,6 +29,16 @@ publishing {
 	publications {
 		maven(MavenPublication) {
 			artifact distZip
+		}
+	}
+
+	repositories {
+		maven {
+			url "https://maven.ossez.com/repository/internal/"
+			credentials {
+				username ""
+				password ""
+			}
 		}
 	}
 }
